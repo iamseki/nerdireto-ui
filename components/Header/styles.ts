@@ -27,7 +27,7 @@ export const Box = styled.div`
   justify-content:space-between;
   width: 40%;
   margin-top: 17px;
-
+  
   div {
     display: inline-block;
     color: ${({theme}) => theme.text};
@@ -38,12 +38,12 @@ export const Box = styled.div`
     content: '';
     display: block;
     width: 0;
-    height: 1.5px;
+    height: 1px;
     background: ${({theme}) => theme.text};
     transition: width .3s;
   }
   div:hover::after{
-    width: 100%;
+    width: 95%;
     transition: width .3s;
   }
 `
