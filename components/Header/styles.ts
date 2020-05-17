@@ -26,16 +26,13 @@ export const Box = styled.div`
   align-items: center;
   justify-content:space-between;
   width: 40%;
+  margin-top: 17px;
 
   div {
     display: inline-block;
-    color: #000;
+    color: ${({theme}) => theme.text};
     text-decoration: none;
     cursor: pointer;
-    transition: opacity 0.3s;
-    &:hover {
-      opacity: 0.5;
-    }
   }
   div::after {
     content: '';

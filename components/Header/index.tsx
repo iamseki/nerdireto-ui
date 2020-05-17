@@ -16,7 +16,7 @@ const Header = ({themeHandler} : Props) => (
       <div>
         <strong>Blog</strong>
       </div>
-        <IoIosGlasses size="48"/>
+      <IoIosGlasses size="48"/>
       <div>
         <strong>About</strong>
       </div>
