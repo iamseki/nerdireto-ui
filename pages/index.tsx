@@ -1,14 +1,18 @@
 import Head from 'next/head'
-import {Title} from './styles';
 
 const Home = () => (
   <div>
     <Head>
-      <title>teste</title>
+      <title>Nerdireto</title>
     </Head>
-    <Title>
-      teste
-    </Title>
+    <div style={{display:'flex', alignItems:'center',justifyContent:'center', marginTop:100}}>
+    <img 
+      src="/codingws.svg"
+      alt="codingws"
+      height="400"
+      width="400"
+    />
+    </div>
   </div>
 )
 
