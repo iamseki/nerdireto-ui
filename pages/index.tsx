@@ -1,11 +1,16 @@
-import Head from 'next/head'
-
+import { Container, Form } from "./styles";
+import { GiRead } from 'react-icons/gi'
+import { FaMoneyCheckAlt } from 'react-icons/fa'
 const Home = () => (
-  <div>
-    <Head>
-      <title>Nerdireto</title>
-    </Head>
-    <div style={{display:'flex', alignItems:'center',justifyContent:'center', marginTop:100}}>
+  <Container>
+    <Form>
+      <GiRead size="40"/>
+      <input
+          placeholder="O que você quer saber ?"
+      />
+      <FaMoneyCheckAlt size="32"/>
+    </Form>
+    <div style={{display:'flex', alignItems:'center',justifyContent:'center', marginTop:50}}>
     <img 
       src="/codingws.svg"
       alt="codingws"
@@ -13,7 +18,7 @@ const Home = () => (
       width="400"
     />
     </div>
-  </div>
+  </Container>
 )
 
 export default Home;
