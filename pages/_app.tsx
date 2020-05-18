@@ -3,11 +3,12 @@ import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../styles/global';
 import Header from '../components/Header';
+import Head from 'next/head'
 
 const lightTheme = {
     background: 'linear-gradient(180deg, #e1e1e1 5%, rgba(36, 34, 34, 0) 50%), #fff',
     text: '#222',
-    input: '#242323',
+    input: '#FFEEEA ',
     listBackground: '#e1e1e1',
     listBox: 'rgba(213, 217, 222, 0.8)'
 }
@@ -28,6 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme:darkTheme}>
+      <Head>
+        <title>Nerdireto</title>
+      </Head>
       <GlobalStyle/>
       <Header themeHandler={handleThemeButton}/>
       <Component {...pageProps} />
