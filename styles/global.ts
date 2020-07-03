@@ -15,8 +15,11 @@ export default createGlobalStyle`
     -webkit-font-smoothing: antialiased;
   }
 
-  h1,h2,h3,h4,h5,small,strong,p,button,input,div{
+  h1,h2,h3,h4,h5,small,strong,p,button,div{
     color: ${({theme}) => theme.text}
+  }
+  input{
+    color: #212121;
   }
 
   body, input, button {

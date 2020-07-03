@@ -8,7 +8,7 @@ import Head from 'next/head'
 const lightTheme = {
     background: 'linear-gradient(180deg, #e1e1e1 5%, rgba(36, 34, 34, 0) 50%), #fff',
     text: '#222',
-    input: '#FFEEEA ',
+    input: '#FFEEEA',
     listBackground: '#e1e1e1',
     listBox: 'rgba(213, 217, 222, 0.8)'
 }
