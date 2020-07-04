@@ -1,26 +1,32 @@
-import React , { useRef, useEffect } from 'react'
+import React , { useState, useEffect, forwardRef } from 'react'
 import { Container, Form } from "../styles/index";
 import { GiRead } from 'react-icons/gi'
 import { FaMoneyCheckAlt } from 'react-icons/fa'
+import Tooltip from '@material-ui/core/Tooltip';
 
 const Home = () => {
-
 
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:8080/room")
     ws.onopen = () => alert("socket conectado")
-
 
     },[])
 
   return (
     <Container>
       <Form>
-        <GiRead size="40"/>
+
+        <Tooltip title="Escrever" arrow>
+          <IconRead />
+        </Tooltip>
+
         <input
             placeholder="O que você quer saber ?"
         />
-        <FaMoneyCheckAlt size="32"/>
+        <Tooltip title="Doar uns trocados" arrow>
+          <IconMoney />
+        </Tooltip>
+
       </Form>
       <div style={{display:'flex', alignItems:'center',justifyContent:'center', marginTop:50}}>
       <img 
@@ -33,6 +39,18 @@ const Home = () => {
     </Container>
   )
 }
+
+const IconMoney = forwardRef(function IconMoney(props, ref) {
+  return (<div {...props} ref={ref}>
+    <FaMoneyCheckAlt size="32" />
+    </div>)
+});
+
+const IconRead = forwardRef(function IconRead(props, ref) {
+  return (<div {...props} ref={ref}>
+    <GiRead size="40" />
+    </div>)
+});
 
 
 export default Home;

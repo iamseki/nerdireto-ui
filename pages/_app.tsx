@@ -10,14 +10,18 @@ const lightTheme = {
     text: '#222',
     input: '#FFEEEA',
     listBackground: '#e1e1e1',
-    listBox: 'rgba(213, 217, 222, 0.8)'
+    listBox: 'rgba(213, 217, 222, 0.8)',
+    modal: 'rgba(32, 32, 32, 0.8)',
+    textModal: '#fff'
 }
 const darkTheme = {
     background: 'linear-gradient(180deg, #242323 15%, rgba(36, 34, 34, 0) 100%), #313131',
     text: '#f0f7f0',
     input: '#fff',
     listBackground: '#383737',
-    listBox: 'rgba(32, 32, 32, 0.8)'
+    listBox: 'rgba(32, 32, 32, 0.8)',
+    modal: '#f0f7f0',
+    textModal: '#222',
 }
 
 function MyApp({ Component, pageProps }: AppProps) {

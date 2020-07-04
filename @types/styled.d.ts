@@ -7,5 +7,7 @@ declare module 'styled-components' {
       input: string;
       listBackground: string;
       listBox: string;
+      modal: string;
+      textModal: string;
   }
 }
