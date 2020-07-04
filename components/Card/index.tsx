@@ -32,36 +32,40 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
 
   return (
     <Container>
-<Card className={classes.root+" cardContainer"}>
-      <CardActionArea>
-        <CardMedia
-          className={classes.media}
-          image={imageUrl}
-          //image="/static/images/cards/contemplative-reptile.jpg"
-          title="teste"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
-            {description}
-          </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
-            {tags && tags.join(" ")}
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Share
+      <Card className={classes.root}>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={imageUrl}
+            //image="/static/images/cards/contemplative-reptile.jpg"
+            title="teste"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2">
+              {description}
+            </Typography>
+            <Typography variant="body2" color="textSecondary" component="p">
+              {tags && tags.join(" ")}
+            </Typography>
+          </CardContent>
+        </CardActionArea>
+        <CardActions>
+          <Button size="small" color="primary">
+            <Link href="/post/[pid]" as={`/post/${id}`} >
+              <a>
+                Share
+              </a>
+            </Link>
         </Button>
-        <Button size="small" color="primary">
-          <Link href="/post/[pid]" as={`/post/${id}`} >
+          <Button size="small" color="primary">
+            <Link href="/post/[pid]" as={`/post/${id}`} >
             <a>
-              Ler
+                Ler
             </a>
-          </Link>
-        </Button>
-      </CardActions>
-    </Card>
+            </Link>
+          </Button>
+        </CardActions>
+      </Card>
     </Container>
   );
 }

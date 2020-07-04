@@ -1,5 +1,6 @@
 import { GetStaticProps } from 'next'
 import Card from '../components/Card'
+import { Container } from '../styles/blog'
 
 interface Props {
   posts: Post[]
@@ -9,14 +10,15 @@ interface Post {
   tags: string[];
   imageUrl: string;
   description: string;
+  status: string;
 }
 
 const Blog = ({ posts }: Props) => {
 
   return (
-    <div>
-      {posts.map(p => <Card id={p.id} description={p.description} tags={p.tags} imageUrl={p.imageUrl} />)}
-    </div>
+    <Container>
+      {posts.map(p => p.status === "done" && <Card key= {p.id} id={p.id} description={p.description} tags={p.tags} imageUrl={p.imageUrl} />)}
+    </Container>
   )
 }
 
