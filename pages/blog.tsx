@@ -1,5 +1,5 @@
 import { GetStaticProps } from 'next'
-import Link from 'next/link'
+import Card from '../components/Card'
 
 interface Props {
   posts: Post[]
@@ -14,14 +14,9 @@ interface Post {
 const Blog = ({ posts }: Props) => {
 
   return (
-    <ul>
-      { posts.map(p => <div key={p.id}>
-        <li>{p.description}</li>
-        <Link href="/post/[pid]" as ={`/post/${p.id}`} >
-          <a>Ler</a>
-        </Link>
-      </div> ) }
-    </ul>
+    <div>
+      {posts.map(p => <Card id={p.id} description={p.description} tags={p.tags} imageUrl={p.imageUrl} />)}
+    </div>
   )
 }
 
