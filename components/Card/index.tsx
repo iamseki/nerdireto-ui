@@ -43,7 +43,7 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
             {description}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {tags.join(" ")}
+            {tags && tags.join(" ")}
           </Typography>
         </CardContent>
       </CardActionArea>
