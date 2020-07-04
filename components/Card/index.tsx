@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link'
+import { Container } from './styles'
 
 interface Props {
   id: string;
@@ -30,7 +31,8 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
   const classes = useStyles();
 
   return (
-    <Card className={classes.root}>
+    <Container>
+<Card className={classes.root+" cardContainer"}>
       <CardActionArea>
         <CardMedia
           className={classes.media}
@@ -60,5 +62,6 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
         </Button>
       </CardActions>
     </Card>
+    </Container>
   );
 }
