@@ -1,9 +1,12 @@
+import "react-notion/src/styles.css";
+import "prismjs/themes/prism-tomorrow.css";
 import { AppProps } from 'next/app'
 import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../styles/global';
 import Header from '../components/Header';
 import Head from 'next/head'
+
 
 const lightTheme = {
     background: 'linear-gradient(180deg, #e1e1e1 5%, rgba(36, 34, 34, 0) 50%), #fff',

@@ -5,9 +5,8 @@ interface Props {
   SwitchThemeHandler: Function;
 }
 
-const  Switches: React.FC<Props> = ({SwitchThemeHandler}) => {
+const  Switches = ({SwitchThemeHandler}: Props) => {
   const [checked, setCheked] = useState(false);
-
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setCheked(!checked);

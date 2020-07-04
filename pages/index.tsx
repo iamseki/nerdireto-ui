@@ -1,4 +1,4 @@
-import React , { useState, useEffect, forwardRef } from 'react'
+import React , {  useEffect } from 'react'
 import { Container, Form } from "../styles/index";
 import { GiRead } from 'react-icons/gi'
 import { FaMoneyCheckAlt } from 'react-icons/fa'
@@ -15,18 +15,15 @@ const Home = () => {
   return (
     <Container>
       <Form>
-
         <Tooltip title="Escrever" arrow>
           <IconRead />
         </Tooltip>
-
         <input
             placeholder="O que você quer saber ?"
         />
         <Tooltip title="Doar uns trocados" arrow>
           <IconMoney />
         </Tooltip>
-
       </Form>
       <div style={{display:'flex', alignItems:'center',justifyContent:'center', marginTop:50}}>
       <img 
@@ -40,13 +37,13 @@ const Home = () => {
   )
 }
 
-const IconMoney = forwardRef(function IconMoney(props, ref) {
+const IconMoney = React.forwardRef(function IconMoney(props, ref) {
   return (<div {...props} ref={ref as React.MutableRefObject<HTMLDivElement>}>
     <FaMoneyCheckAlt size="32" />
     </div>)
 });
 
-const IconRead = forwardRef(function IconRead(props, ref) {
+const IconRead = React.forwardRef(function IconRead(props, ref) {
   return (<div {...props} ref={ref as React.MutableRefObject<HTMLDivElement>}>
     <GiRead size="40" />
     </div>)

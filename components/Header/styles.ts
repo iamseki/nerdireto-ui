@@ -10,6 +10,7 @@ export const Container = styled.header`
 
   svg {
     cursor: pointer;
+    margin: 17px;
   }
   strong {
     letter-spacing: 1px;
@@ -44,6 +45,11 @@ export const Box = styled.div`
   }
   div:hover::after{
     width: 95%;
+    transition: width .3s;
+  }
+
+  #glasses:hover::after{
+    width: 0%;
     transition: width .3s;
   }
 `
