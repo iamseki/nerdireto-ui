@@ -41,13 +41,13 @@ const Home = () => {
 }
 
 const IconMoney = forwardRef(function IconMoney(props, ref) {
-  return (<div {...props} ref={ref}>
+  return (<div {...props} ref={ref as React.MutableRefObject<HTMLDivElement>}>
     <FaMoneyCheckAlt size="32" />
     </div>)
 });
 
 const IconRead = forwardRef(function IconRead(props, ref) {
-  return (<div {...props} ref={ref}>
+  return (<div {...props} ref={ref as React.MutableRefObject<HTMLDivElement>}>
     <GiRead size="40" />
     </div>)
 });
