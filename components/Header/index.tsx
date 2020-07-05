@@ -23,10 +23,14 @@ const Header = ({ themeHandler }: Props) => (
         <IconGlasses />
       </Link>
       <div>
-        <strong>About</strong>
+        <Link href="/about">
+          <strong>About</strong>
+        </Link>
       </div>
     </Box>
-    <FaUserCog size="32" />
+    <Link href="/user">
+      <FaUserCog size="32" />
+    </Link>
   </Container>)
 export default Header;
 
