@@ -9,6 +9,7 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link'
 import { Container } from './styles'
+import Router from 'next/router'
 
 interface Props {
   id: string;
@@ -31,37 +32,37 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
   const classes = useStyles();
 
   return (
-    <Container>
+    <Container >
       <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image={imageUrl}
-            //image="/static/images/cards/contemplative-reptile.jpg"
-            title="teste"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="h2">
-              {description}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-              {tags && tags.join(" ")}
-            </Typography>
-          </CardContent>
+        <CardActionArea onClick={() => Router.push("/post/[pid]",`/post/${id}`) }>
+            <CardMedia
+              className={classes.media}
+              image={imageUrl}
+              //image="/static/images/cards/contemplative-reptile.jpg"
+              title="teste"
+            />
+            <CardContent>
+              <Typography gutterBottom variant="h5" component="h2">
+                {description}
+              </Typography>
+              <Typography variant="body2" color="textSecondary" component="p">
+                {tags && tags.join(" ")}
+              </Typography>
+            </CardContent>
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
             <Link href="/post/[pid]" as={`/post/${id}`} >
               <a>
-                Share
+                Compartilhar
               </a>
             </Link>
-        </Button>
+          </Button>
           <Button size="small" color="primary">
             <Link href="/post/[pid]" as={`/post/${id}`} >
-            <a>
+              <a>
                 Ler
-            </a>
+              </a>
             </Link>
           </Button>
         </CardActions>

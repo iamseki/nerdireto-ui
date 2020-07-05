@@ -1,6 +1,7 @@
 import { NotionRenderer } from "react-notion";
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
+import { Container } from '../../styles/post'
 
 const Post = () => {
   const [post,setPost] = useState({})
@@ -19,9 +20,9 @@ const Post = () => {
 
 
   return (
-    <div style={{ marginTop: 50, padding: 17, margin: 24 }}>
+    <Container>
       <NotionRenderer blockMap={post} />
-    </div>
+    </Container>
   )
 };
 
