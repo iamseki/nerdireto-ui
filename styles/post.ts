@@ -10,8 +10,8 @@ margin: 24px;
 }
 
 .notion-code {
-  background: ${({theme}) => theme.listBox}
-
+  background: ${({theme}) => theme.listBox};
+  overflow: hidden;
 }
 
 .constant {
