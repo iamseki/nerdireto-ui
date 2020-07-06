@@ -13,7 +13,7 @@ const lightTheme = {
     text: '#222',
     input: '#FFEEEA',
     listBackground: '#fff',
-    listBox: 'rgba(213, 217, 222, 0.2)',
+    listBox: 'rgba(213, 217, 222, 0.4)',
     modal: 'rgba(32, 32, 32, 0.8)',
     textModal: '#222'
 }

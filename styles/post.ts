@@ -19,15 +19,13 @@ margin: 24px;
 }
 
 .string{
-  color: #b1a940;
+  color: #c4b50a;
 }
-
-.function{
-  color: #fa02ff;
-}
-
-.keyword{
-  color: #001bea;
+.punctuation {
+    color: ${({theme}) => theme.text};
+  }
+.keyword, .function {
+  color: #5294ff;
 }
 
 `
