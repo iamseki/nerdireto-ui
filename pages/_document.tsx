@@ -9,8 +9,8 @@ class MyDocument extends Document {
       <Html lang="pt-br">
         <Head>
           <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,400;0,500;1,400;1,500&family=Roboto+Mono:ital,wght@0,300;0,400;0,500;1,500&display=swap" rel="stylesheet" />
-          <meta name="og:description" content="Sendo direto e reto sem enrolamento, venha disseminar o conhecimento !" />
-          <meta name="description" content="Sendo direto e reto sem enrolamento, venha disseminar o conhecimento !" />
+          <meta name="og:description" content="Sendo Nerdireto e reto sem enrolamento, venha disseminar o conhecimento !" />
+          <meta name="description" content="Sendo Nerdireto e reto sem enrolamento, venha disseminar o conhecimento !" />
         </Head>
         <body>
           <Main />
