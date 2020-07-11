@@ -2,9 +2,11 @@ import { NotionRenderer } from "react-notion";
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Container } from '../../styles/post'
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 const Post = () => {
-  const [post,setPost] = useState({})
+  const [post, setPost] = useState({})
+  const [loading, setLoading] = useState(true)
   const router = useRouter()
 
   useEffect(() => {
@@ -14,14 +16,16 @@ const Post = () => {
       ).then(res => res.json())
     }
 
-    fetchData().then(data => setPost(data));
+    fetchData().then(data => {
+      setPost(data)
+      setLoading(false)
+    });
 
   }, [])
 
-
   return (
     <Container>
-      <NotionRenderer blockMap={post} />
+      {loading ? <CircularProgress /> : <NotionRenderer blockMap={post} />}
     </Container>
   )
 };
