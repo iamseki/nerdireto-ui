@@ -6,3 +6,11 @@ export const Container = styled.div`
   column-gap: 10px;
   row-gap: 1em;
 `
+export const LoadingBox = styled.div`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  padding: 120px;
+  justify-content: center;
+`

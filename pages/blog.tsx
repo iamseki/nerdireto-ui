@@ -1,10 +1,8 @@
-import { GetServerSideProps } from 'next'
+import CircularProgress from '@material-ui/core/CircularProgress';
 import Card from '../components/Card'
-import { Container } from '../styles/blog'
+import { Container, LoadingBox } from '../styles/blog'
+import useSWR from 'swr'
 
-interface Props {
-  posts: Post[]
-}
 interface Post {
   id: string;
   tags: string[];
@@ -13,21 +11,18 @@ interface Post {
   status: string;
 }
 
-const Blog = ({ posts }: Props) => {
+const fetcher = (url: string) => fetch(url).then(res => res.json());
 
+const Blog = () => {
+  const { data, error } = useSWR("https://notion-api.splitbee.io/v1/table/d5fe857e5cb04182b0c78c302bb4fd38?v=f148e891fc3549d0ad8ad5b88109a39b", fetcher)
+
+  if (!data) return (<LoadingBox> <CircularProgress color="secondary" /> </LoadingBox>)
+  
   return (
     <Container>
-      {posts.map(p => p.status === "done" && <Card key= {p.id} id={p.id} description={p.description} tags={p.tags} imageUrl={p.imageUrl} />)}
+      {data.map((p: Post) => p.status === "done" && <Card key={p.id} id={p.id} description={p.description} tags={p.tags} imageUrl={p.imageUrl} />)}
     </Container>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async () => {
-
-  const res = await fetch('https://notion-api.splitbee.io/v1/table/d5fe857e5cb04182b0c78c302bb4fd38?v=f148e891fc3549d0ad8ad5b88109a39b')
-  const posts = await res.json()
-
-  return { props: { posts } }
 }
 
 export default Blog
