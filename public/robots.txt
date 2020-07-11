@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /blog
 Disallow: /404
 Disallow: /falha-interna
 Disallow: /500
