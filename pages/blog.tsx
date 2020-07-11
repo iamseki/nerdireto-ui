@@ -2,6 +2,7 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import Card from '../components/Card'
 import { Container, LoadingBox } from '../styles/blog'
 import useSWR from 'swr'
+import Head from 'next/head'
 
 interface Post {
   id: string;
@@ -19,9 +20,15 @@ const Blog = () => {
   if (!data) return (<LoadingBox> <CircularProgress color="secondary" /> </LoadingBox>)
   
   return (
+    <>
+    <Head>
+        <meta name="og:description" content="nerdireto blog, posts diretos sem enrolamento venha compartilhar o conhecimento !" />
+        <meta name="description" content="nerdireto blog, posts diretos sem enrolamento venha compartilhar o conhecimento !" />
+    </Head>
     <Container>
       {data.map((p: Post) => p.status === "done" && <Card key={p.id} id={p.id} description={p.description} tags={p.tags} imageUrl={p.imageUrl} />)}
     </Container>
+    </>
   )
 }
 

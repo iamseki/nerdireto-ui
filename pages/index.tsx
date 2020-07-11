@@ -4,6 +4,7 @@ import { GiRead } from 'react-icons/gi'
 import { FaMoneyCheckAlt } from 'react-icons/fa'
 import Tooltip from '@material-ui/core/Tooltip';
 import Link from 'next/link'
+import Head from 'next/head'
 
 const Home = () => {
 
@@ -14,6 +15,11 @@ const Home = () => {
   }, [])
 
   return (
+    <>
+    <Head>
+          <meta name="og:description" content="Sendo Nerdireto e reto sem enrolamento, venha disseminar o conhecimento !" />
+          <meta name="description" content="Sendo Nerdireto e reto sem enrolamento, venha disseminar o conhecimento !" />
+    </Head>
     <Container>
       <Form>
         <Link href="/blog">
@@ -39,6 +45,7 @@ const Home = () => {
         />
       </div>
     </Container>
+    </>
   )
 }
 
