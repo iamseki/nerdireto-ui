@@ -34,7 +34,7 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
   return (
     <Container >
       <Card className={classes.root}>
-        <CardActionArea onClick={() => Router.push("/post/[id]",`/post/${id}`) }>
+        <CardActionArea onClick={() => Router.push("/post/[id]",`/post/${id}?description=${description}`) }>
             <CardMedia
               className={classes.media}
               image={imageUrl}
@@ -52,14 +52,14 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            <Link href="/post/[id]" as={`/post/${id}`} >
+            <Link href="/post/[id]" as={`/post/${id}?description=${description}`} >
               <a>
                 Compartilhar
               </a>
             </Link>
           </Button>
           <Button size="small" color="primary">
-            <Link href="/post/[id]" as={`/post/${id}`} >
+            <Link href="/post/[id]" as={`/post/${id}?description=${description}`} >
               <a>
                 Ler
               </a>
