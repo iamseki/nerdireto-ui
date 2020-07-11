@@ -10,7 +10,7 @@ const Post = () => {
   useEffect(() => {
     const fetchData = async () => {
       return await fetch(
-        `https://notion-api.splitbee.io/v1/page/${router.query.pid}`
+        `https://notion-api.splitbee.io/v1/page/${router.query.id}`
       ).then(res => res.json())
     }
 
