@@ -9,5 +9,6 @@ declare module 'styled-components' {
       listBox: string;
       modal: string;
       textModal: string;
+      tag:string;
   }
 }

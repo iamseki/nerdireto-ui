@@ -15,7 +15,8 @@ const lightTheme = {
     listBackground: '#fff',
     listBox: 'rgba(213, 217, 222, 0.4)',
     modal: 'rgba(32, 32, 32, 0.8)',
-    textModal: '#222'
+    textModal: '#222',
+    tag: '#FFEEEA'
 }
 const darkTheme = {
     background: 'linear-gradient(180deg, #242323 15%, rgba(36, 34, 34, 0) 100%), #313131',
@@ -25,6 +26,7 @@ const darkTheme = {
     listBox: 'rgba(32, 32, 32, 0.8)',
     modal: '#f0f7f0',
     textModal: '#fff',
+    tag: '#334FFF'
 }
 
 function MyApp({ Component, pageProps }: AppProps) {
