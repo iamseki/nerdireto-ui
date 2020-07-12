@@ -5,12 +5,17 @@ margin-top: 50px;
 padding: 17px; 
 margin: 24px;
 
+.notion-hr {
+  border-color: ${({theme}) => theme.hr};
+}
+
 .notion-quote, [class^='language'], .notion-list {
   color: ${({theme}) => theme.text}
 }
 
-.notion-code {
+.notion-code  {
   background: ${({theme}) => theme.listBox};
+
   overflow: hidden;
 }
 

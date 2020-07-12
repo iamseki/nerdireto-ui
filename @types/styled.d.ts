@@ -10,5 +10,6 @@ declare module 'styled-components' {
       modal: string;
       textModal: string;
       tag:string;
+      hr: string;
   }
 }
