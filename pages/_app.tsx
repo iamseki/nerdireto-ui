@@ -26,7 +26,7 @@ const darkTheme = {
     listBox: 'rgba(32, 32, 32, 0.8)',
     modal: '#f0f7f0',
     textModal: '#fff',
-    tag: '#334FFF'
+    tag: '#5294ff'
 }
 
 function MyApp({ Component, pageProps }: AppProps) {

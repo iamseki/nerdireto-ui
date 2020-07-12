@@ -25,15 +25,15 @@ export const TagBox = styled.div`
   display: grid;
   align-items: center;
   justify-content:center;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 17px;
-  row-gap: 1em;
+  row-gap: 0.5em;
   p{
     font-size: 12px;
     font-style: italic;
     padding: 4px;
     background: ${({theme})=> theme.tag};
-    border-radius: 24px;
+    border-radius: 7px;
     text-align:center;
     letter-spacing: 1px;
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
