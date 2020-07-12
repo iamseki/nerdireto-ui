@@ -8,7 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from 'next/link'
-import { Container } from './styles'
+import { Container, TagBox } from './styles'
 import Router from 'next/router'
 
 interface Props {
@@ -34,21 +34,22 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
   return (
     <Container >
       <Card className={classes.root}>
-        <CardActionArea onClick={() => Router.push("/post/[id]",`/post/${id}?description=${description}`) }>
-            <CardMedia
-              className={classes.media}
-              image={imageUrl}
-              //image="/static/images/cards/contemplative-reptile.jpg"
-              title="teste"
-            />
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                {description}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                {tags && tags.join(" ")}
-              </Typography>
-            </CardContent>
+        <CardActionArea>
+          <CardMedia
+            className={classes.media}
+            image={imageUrl}
+            //image="/static/images/cards/contemplative-reptile.jpg"
+            title="teste"
+          />
+          <CardContent>
+            <Typography gutterBottom variant="h5" component="h2"
+              onClick={() => Router.push("/post/[id]", `/post/${id}?description=${description}`)}>
+              {description}
+            </Typography>
+            <TagBox>
+              {tags && tags.map(t => <p>{t}</p>)}
+            </TagBox>
+          </CardContent>
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
