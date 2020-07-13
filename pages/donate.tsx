@@ -1,4 +1,7 @@
-const Donate = () => (<div style={{ display: 'flex',flexDirection:'column', alignItems: 'center', justifyContent: 'center', marginTop: 50 }}>
+import { Container } from '../styles/global'
+
+
+const Donate = () => (<Container>
   <img
     src="/investing.svg"
     alt="codingws"
@@ -6,8 +9,8 @@ const Donate = () => (<div style={{ display: 'flex',flexDirection:'column', alig
     width="500"
   />
   <h2>Interessado em fazer uma doação ?</h2>
-  <h3 style={{margin:10, letterSpacing:2}}>nerdireto@gmail.com</h3>
+  <h3>nerdireto@gmail.com</h3>
   <strong></strong>
-</div>)
+</Container>)
 
 export default Donate

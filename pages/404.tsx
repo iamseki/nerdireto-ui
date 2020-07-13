@@ -1,12 +1,12 @@
 import { Container } from '../styles/global'
 
-const User = () => (<Container>
+const About = () => ( <Container>
   <img
-    src="/build.svg"
-    alt="codingws"
+    src="/error.svg"
+    alt="error"
     height="600"
     width="600"
   />
 </Container>)
 
-export default User
+export default About

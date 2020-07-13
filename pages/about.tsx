@@ -1,10 +1,12 @@
-const About = () => (<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 50 }}>
+import { Container } from '../styles/global'
+
+const About = () => (<Container>
   <img
     src="/dev.svg"
     alt="codingws"
     height="600"
     width="600"
   />
-</div>)
+</Container>)
 
 export default About
