@@ -38,8 +38,11 @@ const Post = () => {
   return (
     <>
       <Head>
+        <title>Blog – Nerdireto</title>
         <meta name="og:description" content={description} />
         <meta name="description" content={description} />
+        <meta property="og:title" content="Post – Nerdireto" />
+        <meta property="og:url" content={`https://nerdireto.com.br/post/${router.query.id+router.asPath}`} />
       </Head>
       <Container>
         {loading ? <CircularProgress /> : <NotionRenderer blockMap={post} />}

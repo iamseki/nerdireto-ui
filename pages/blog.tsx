@@ -22,9 +22,13 @@ const Blog = () => {
   return (
     <>
     <Head>
+        <title>Blog – Nerdireto</title>
         <meta name="og:description" content="nerdireto blog, posts diretos sem enrolamento venha compartilhar o conhecimento !" />
         <meta name="description" content="nerdireto blog, posts diretos sem enrolamento venha compartilhar o conhecimento !" />
+        <meta property="og:url" content="https://nerdireto.com.br/blog"/>
+        <meta property="og:title" content="Blog – Nerdireto"/>
     </Head>
+    <h1 hidden>nerdireto blog, posts diretos sem enrolamento venha compartilhar o conhecimento !"</h1>
     <Container>
       {data.map((p: Post) => p.status === "done" && <Card key={p.id} id={p.id} description={p.description} tags={p.tags} imageUrl={p.imageUrl} />)}
     </Container>
