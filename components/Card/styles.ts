@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   .MuiCard-root {
-    background: ${({theme}) => theme.listBackground};
+    background: ${({theme}) => theme.card};
     transition: background 0.3s;
   }
 
   .MuiButtonBase-root :hover {
-    background: ${({theme}) => theme.listBox};
+    background: ${({theme}) => theme.hover};
   }
 
   p {

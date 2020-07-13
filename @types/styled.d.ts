@@ -5,8 +5,9 @@ declare module 'styled-components' {
       background: string;
       text: string;
       input: string;
-      listBackground: string;
-      listBox: string;
+      card: string;
+      code: string;
+      hover: string;
       modal: string;
       textModal: string;
       tag:string;
