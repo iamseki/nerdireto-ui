@@ -1,18 +1,23 @@
 import { NotionRenderer } from "react-notion";
-import { useRouter } from 'next/router';
+import { withRouter, NextRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { Container } from '../../styles/post'
 import CircularProgress from '@material-ui/core/CircularProgress';
 import Head from 'next/head'
 
-const Post = () => {
+interface Props {
+  router: NextRouter
+}
+
+const Post = ({ router }: Props) => {
   const [post, setPost] = useState({})
   const [loading, setLoading] = useState(true)
-  const router = useRouter()
 
   const [description, setDescription] = useState("")
 
   useEffect(() => {
+    if (!router.query.id)
+      return
     const fetchData = async () => {
       return await fetch(
         `https://notion-api.splitbee.io/v1/page/${router.query.id}`
@@ -23,15 +28,15 @@ const Post = () => {
       setPost(data)
       setLoading(false)
     });
-    
+
     setDescription(formatQueryDescription())
 
-  }, [])
+  }, [router])
 
-  const formatQueryDescription = ():string => {
+  const formatQueryDescription = (): string => {
     let d = router.asPath.split("description=")[1].trim()
-    d = d.replace(/%20/g,' ')
-    d = d.replace(/%22/g,'"')
+    d = d.replace(/%20/g, ' ')
+    d = d.replace(/%22/g, '"')
     return d
   }
 
@@ -42,7 +47,7 @@ const Post = () => {
         <meta name="og:description" content={description} />
         <meta name="description" content={description} />
         <meta property="og:title" content="Post – Nerdireto" />
-        <meta property="og:url" content={`https://nerdireto.com.br/post/${router.query.id+router.asPath}`} />
+        <meta property="og:url" content={`https://nerdireto.com.br/post/${router.query.id + router.asPath}`} />
       </Head>
       <Container>
         {loading ? <CircularProgress /> : <NotionRenderer blockMap={post} />}
@@ -51,4 +56,4 @@ const Post = () => {
   )
 };
 
-export default Post
+export default withRouter(Post)
