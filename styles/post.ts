@@ -20,13 +20,16 @@ margin: 24px;
 }
 
 .string{
-  color: ${({theme}) => theme.string}
+  color: ${({theme}) => theme.string};
 }
 .punctuation, .operator, .number, #text{
     color: ${({theme}) => theme.text};
   }
-.keyword, .function, .constant {
+.keyword, .constant {
   color: #5294ff;
+}
+.function {
+  color: #be86c3;
 }
 
 `
