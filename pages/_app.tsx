@@ -11,14 +11,15 @@ import Head from 'next/head'
 const lightTheme = {
   background: '#fff',
   text: '#222',
-  input: '#FFEEEA',
+  input: '#e7e7e7',
   card: '#fff',
   hover: 'rgba(213, 217, 222, 0.4)',
   code:'rgba(213, 217, 222, 0.2)',
   modal: 'rgba(32, 32, 32, 0.8)',
   textModal: '#222',
   tag: '#FFEEEA',
-  hr: 'rgba(55, 55, 55, 0.2)'
+  hr: 'rgba(55, 55, 55, 0.2)',
+  string: '#2E8B57'
 }
 const darkTheme = {
   background: 'linear-gradient(180deg, #242323 15%, rgba(36, 34, 34, 0) 100%), #313131',
@@ -30,7 +31,8 @@ const darkTheme = {
   modal: '#f0f7f0',
   textModal: '#fff',
   tag: '#5294ff',
-  hr: 'rgba(237, 237, 237, 0.3)'
+  hr: 'rgba(237, 237, 237, 0.3)',
+  string: '#FEE12B'
 }
 
 function MyApp({ Component, pageProps }: AppProps) {

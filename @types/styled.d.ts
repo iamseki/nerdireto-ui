@@ -12,5 +12,6 @@ declare module 'styled-components' {
       textModal: string;
       tag:string;
       hr: string;
+      string: string;
   }
 }

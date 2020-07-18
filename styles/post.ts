@@ -13,23 +13,19 @@ margin: 24px;
   color: ${({theme}) => theme.text}
 }
 
-.notion-code  {
+.notion-code, .notion-callout, .constant  {
   background: ${({theme}) => theme.code};
-
+  
   overflow: hidden;
 }
 
-.constant {
-  color: #e09a00;
-}
-
 .string{
-  color: #c4b50a;
+  color: ${({theme}) => theme.string}
 }
-.punctuation {
+.punctuation, .operator, .number, #text{
     color: ${({theme}) => theme.text};
   }
-.keyword, .function {
+.keyword, .function, .constant {
   color: #5294ff;
 }
 
