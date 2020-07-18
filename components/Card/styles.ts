@@ -19,6 +19,12 @@ export const Container = styled.div`
     font-style: italic;
     font-weight: bold;
   }
+
+  transition: transform 0.3s;
+
+  &:hover {
+    transform: translateX(-17px)
+  }
 `
 
 export const TagBox = styled.div`
