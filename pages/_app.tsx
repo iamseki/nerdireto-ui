@@ -32,7 +32,7 @@ const darkTheme = {
   textModal: '#fff',
   tag: '#5294ff',
   hr: 'rgba(237, 237, 237, 0.3)',
-  string: '#FEE12B'
+  string: '#EEE468'
 }
 
 function MyApp({ Component, pageProps }: AppProps) {

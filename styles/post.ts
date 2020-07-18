@@ -29,7 +29,7 @@ margin: 24px;
   color: #5294ff;
 }
 .function {
-  color: #be86c3;
+  color: #c797cb;
 }
 
 `

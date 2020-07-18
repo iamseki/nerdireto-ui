@@ -10,7 +10,6 @@ export const Container = styled.header`
 
   svg {
     cursor: pointer;
-
   }
   strong {
     letter-spacing: 1px;
