@@ -15,8 +15,14 @@ margin: 24px;
 
 .notion-code, .notion-callout, .constant  {
   background: ${({theme}) => theme.code};
+
+  ::-webkit-scrollbar {
+  width: 1px;
+  height: 1px;
+}
   
-  overflow: hidden;
+  overflow: scroll;
+  overflow-y: hidden;
 }
 
 .string{
