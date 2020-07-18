@@ -4,6 +4,7 @@ import Switches from './Switch'
 import { IoIosGlasses } from 'react-icons/io'
 import { FaUserCog } from 'react-icons/fa'
 import Link from 'next/link'
+import Tooltip from '@material-ui/core/Tooltip';
 
 
 interface Props {
@@ -20,7 +21,9 @@ const Header = ({ themeHandler }: Props) => (
         </Link>
       </div>
       <Link href="/" passHref>
-        <IconGlasses />
+        <Tooltip title="Home" arrow placement="right">
+          <IconGlasses />
+        </Tooltip>
       </Link>
       <div>
         <Link href="/about">
@@ -29,7 +32,9 @@ const Header = ({ themeHandler }: Props) => (
       </div>
     </Box>
     <Link href="/user">
-      <FaUserCog size="32" />
+      <Tooltip title="Configurações" arrow placement="left">
+        <IconUser />
+      </Tooltip>
     </Link>
   </Container>)
 export default Header;
@@ -37,5 +42,11 @@ export default Header;
 const IconGlasses = React.forwardRef(function IconGlasses(props, ref) {
   return (<div id="glasses" {...props} ref={ref as React.MutableRefObject<HTMLDivElement>}>
     <IoIosGlasses size="48" />
+  </div>)
+});
+
+const IconUser = React.forwardRef(function IconGlasses(props, ref) {
+  return (<div {...props} ref={ref as React.MutableRefObject<HTMLDivElement>}>
+    <FaUserCog size="32" />
   </div>)
 });

@@ -47,4 +47,23 @@ export const SearchBox = styled.div`
     margin: 24px;
     font-style: italic;
   }
+  a {
+    display: inline-block;
+    color: ${({theme}) => theme.text};
+    text-decoration: none;
+    transition: width .3s;
+    letter-spacing: 1px;
+    cursor: pointer;
+  }
+  a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 1px;
+    background: ${({theme}) => theme.text};
+  }
+  a:hover::after{
+    width: 100%;
+    transition: width .3s;
+  }
 `

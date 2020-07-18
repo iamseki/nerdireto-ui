@@ -42,7 +42,13 @@ const Home = () => {
         </Form>
         <SearchBox>
           {
-            input ? (<><CircularProgress color="secondary" /><h2>Em desenvolvimento &#x1F4BB;</h2></>) : (<img
+            input ? (<>
+              <CircularProgress color="secondary" />
+              <h2>Em desenvolvimento &#x1F4BB;</h2>
+              <Link href="/blog">
+                Acesse o Blog
+              </Link>
+            </>) : (<img
               src="/index.svg"
               alt="searching"
               height="400"
