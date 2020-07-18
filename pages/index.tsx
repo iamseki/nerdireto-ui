@@ -1,12 +1,14 @@
-import React, { useEffect } from 'react'
-import { Container, Form } from "../styles/index";
+import React, { useEffect, useState } from 'react'
+import CircularProgress from '@material-ui/core/CircularProgress';
+import { Container, Form, SearchBox } from "../styles/index";
 import { GiRead } from 'react-icons/gi'
-import { FaMoneyCheckAlt } from 'react-icons/fa'
+import { FcMoneyTransfer } from 'react-icons/fc'
 import Tooltip from '@material-ui/core/Tooltip';
 import Link from 'next/link'
 import Head from 'next/head'
 
 const Home = () => {
+  const [input, setInput] = useState("")
 
   useEffect(() => {
     const ws = new WebSocket("ws://localhost:8080/room")
@@ -16,42 +18,46 @@ const Home = () => {
 
   return (
     <>
-    <Head>
-          <meta name="og:description" content="Sendo Nerdireto e reto sem enrolamento, venha disseminar o conhecimento !" />
-          <meta name="description" content="Sendo Nerdireto e reto sem enrolamento, venha disseminar o conhecimento !" />
-    </Head>
-    <Container>
-      <Form>
-        <Link href="/blog">
-          <Tooltip title="Escrever" arrow>
-            <IconRead />
-          </Tooltip>
-        </Link>
-        <input
-          placeholder="O que você quer saber ?"
-        />
-        <Link href="/donate">
-          <Tooltip title="Doar uns trocados" arrow>
-            <IconMoney />
-          </Tooltip>
-        </Link>
-      </Form>
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: 50 }}>
-        <img
-          src="/codingws.svg"
-          alt="codingws"
-          height="400"
-          width="400"
-        />
-      </div>
-    </Container>
+      <Head>
+        <meta name="og:description" content="Sendo Nerdireto e reto sem enrolamento, venha disseminar o conhecimento !" />
+        <meta name="description" content="Sendo Nerdireto e reto sem enrolamento, venha disseminar o conhecimento !" />
+      </Head>
+      <Container>
+        <Form>
+          <Link href="/blog">
+            <Tooltip title="Escrever" arrow>
+              <IconRead />
+            </Tooltip>
+          </Link>
+          <input
+            placeholder="O que você quer saber ?"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <Link href="/donate">
+            <Tooltip title="Doar uns trocados" arrow>
+              <IconMoney />
+            </Tooltip>
+          </Link>
+        </Form>
+        <SearchBox>
+          {
+            input ? (<><CircularProgress color="secondary" /><h2>Em desenvolvimento &#x1F4BB;</h2></>) : (<img
+              src="/index.svg"
+              alt="searching"
+              height="400"
+              width="400"
+            />)
+          }
+        </SearchBox>
+      </Container>
     </>
   )
 }
 
 const IconMoney = React.forwardRef(function IconMoney(props, ref) {
   return (<div {...props} ref={ref as React.MutableRefObject<HTMLDivElement>}>
-    <FaMoneyCheckAlt size="32" />
+    <FcMoneyTransfer size="40" />
   </div>)
 });
 
