@@ -55,13 +55,6 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
           <Button size="small" color="primary">
             <Link href="/post/[id]" as={`/post/${id}?description=${description}`} >
               <a>
-                Compartilhar
-              </a>
-            </Link>
-          </Button>
-          <Button size="small" color="primary">
-            <Link href="/post/[id]" as={`/post/${id}?description=${description}`} >
-              <a>
                 Ler
               </a>
             </Link>

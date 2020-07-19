@@ -19,7 +19,6 @@ export const Container = styled.header`
     }
   }
 `
-
 export const Box = styled.div`
   display: flex;
   flex-direction: row;
