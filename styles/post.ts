@@ -15,6 +15,7 @@ margin: 24px;
 
 .notion-asset-wrapper {
   margin: auto;
+  border-radius: 7px;
 }
 
 .notion-code, .notion-callout, .constant  {
