@@ -6,15 +6,19 @@ padding: 17px;
 margin: 24px;
 
 .notion-hr {
-  border-color: ${({theme}) => theme.hr};
+  border-color: ${({ theme }) => theme.hr};
 }
 
 .notion-quote, [class^='language'], .notion-list {
-  color: ${({theme}) => theme.text}
+  color: ${({ theme }) => theme.text}
+}
+
+.notion-asset-wrapper {
+  margin: auto;
 }
 
 .notion-code, .notion-callout, .constant  {
-  background: ${({theme}) => theme.code};
+  background: ${({ theme }) => theme.code};
 
   ::-webkit-scrollbar {
   width: 1px;
@@ -26,10 +30,10 @@ margin: 24px;
 }
 
 .string{
-  color: ${({theme}) => theme.string};
+  color: ${({ theme }) => theme.string};
 }
 .punctuation, .operator, .number, #text{
-    color: ${({theme}) => theme.text};
+    color: ${({ theme }) => theme.text};
   }
 .keyword, .constant {
   color: #5294ff;
