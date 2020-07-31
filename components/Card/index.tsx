@@ -31,6 +31,12 @@ const useStyles = makeStyles({
 export default function MediaCard({ id, description, tags, imageUrl }: Props) {
   const classes = useStyles();
 
+  const formatQueryDescription = (d :string): string => {
+    let formatted = d.replace(/ /gi,"-")
+    console.log(formatted)
+    return formatted
+  }
+
   return (
     <Container >
       <Card className={classes.root}>
@@ -43,7 +49,7 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
           />
           <CardContent>
             <Typography gutterBottom variant="h5" component="h2"
-              onClick={() => Router.push("/post/[id]", `/post/${id}?description=${description}`)}>
+              onClick={() => Router.push("/post/[id]", `/post/${id}?description=${formatQueryDescription(description)}`)}>
               {description}
             </Typography>
             <TagBox>
@@ -53,7 +59,7 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
         </CardActionArea>
         <CardActions>
           <Button size="small" color="primary">
-            <Link href="/post/[id]" as={`/post/${id}?description=${description}`} >
+            <Link href="/post/[id]" as={`/post/${id}?description=${formatQueryDescription(description)}`} >
               <a>
                 Ler
               </a>

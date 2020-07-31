@@ -35,7 +35,7 @@ const Post = ({ router }: Props) => {
 
   const formatQueryDescription = (): string => {
     let d = router.asPath.split("description=")[1].trim()
-    d = d.replace(/%20/g, ' ')
+    d = d.replace(/-/g, ' ')
     d = d.replace(/%22/g, '"')
     return d
   }
