@@ -31,9 +31,8 @@ const useStyles = makeStyles({
 export default function MediaCard({ id, description, tags, imageUrl }: Props) {
   const classes = useStyles();
 
-  const formatQueryDescription = (d :string): string => {
-    let formatted = d.replace(/ /gi,"-")
-    console.log(formatted)
+  const formatQueryDescription = (d: string): string => {
+    let formatted = d.replace(/ /gi, "-")
     return formatted
   }
 
@@ -44,6 +43,7 @@ export default function MediaCard({ id, description, tags, imageUrl }: Props) {
           <CardMedia
             className={classes.media}
             image={imageUrl}
+            onClick={() => Router.push("/post/[id]", `/post/${id}?description=${formatQueryDescription(description)}`)}
             //image="/static/images/cards/contemplative-reptile.jpg"
             title="teste"
           />
